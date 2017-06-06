@@ -25,6 +25,9 @@
     "url": "https://github.com/HardAndHeavy/project-lvl1-s101/issues"
   },
   "homepage": "https://github.com/HardAndHeavy/project-lvl1-s101#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.7"
+  },
   "devDependencies": {
     "babel-cli": "",
     "babel-core": "",
