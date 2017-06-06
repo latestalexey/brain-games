@@ -1,12 +1,13 @@
 {
   "name": "brain-games-ivan",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "game for brain by ivan",
   "main": "dist/bin/brain-games.js",
   "scripts": {
     "babel-node": "babel-node",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublish": "npm run build"
+    "prepublish": "npm run build",
+    "eslint": "eslint"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js"
@@ -32,6 +33,10 @@
     "babel-cli": "",
     "babel-core": "",
     "babel-preset-env": "",
-    "babel-preset-stage-0": ""
+    "babel-preset-stage-0": "",
+    "babel-eslint": "",
+    "eslint": "",
+    "eslint-config-airbnb-base": "",
+    "eslint-plugin-import": ""
   }
 }
