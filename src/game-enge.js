@@ -1,39 +1,39 @@
 import readlineSync from 'readline-sync';
 
-const make = (scheme = {}) => {
-  console.log('Welcome to the Brain Games!');
-  if (scheme.description) {
-    console.log(scheme.description);
+const playRound = (count, getPuzzle) => {
+  if (count === 0) {
+    return true;
   }
+
+  const puzzle = getPuzzle();
+  console.log(`Question: ${puzzle.question}`);
+  const answer = readlineSync.question('Your answer: ');
+  if (answer === puzzle.solution) {
+    console.log('Correct!');
+  } else {
+    console.log(`'${answer}' is wrong answer ;(. Correct answer was '${puzzle.solution}'.`);
+    return false;
+  }
+
+  return playRound(count - 1, getPuzzle);
+};
+
+const run = (scheme) => {
+  console.log('Welcome to the Brain Games!');
+  console.log(scheme.description);
 
   console.log('');
 
   const user = readlineSync.question('May I have your name? ');
   console.log(`Hello, ${user}!`);
 
-  if (scheme.questionsCount) {
-    console.log('');
+  console.log('');
 
-    let correctQuestionsCount = 0;
-    for (let i = 0; i < scheme.questionsCount; i += 1) {
-      const puzzle = scheme.makePuzzle();
-      console.log(`Question: ${puzzle.question}`);
-      const answer = readlineSync.question('Your answer: ');
-      if (answer === puzzle.solution) {
-        console.log('Correct!');
-        correctQuestionsCount += 1;
-      } else {
-        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${puzzle.solution}'.`);
-        break;
-      }
-    }
-
-    if (correctQuestionsCount === scheme.questionsCount) {
-      console.log(`Congratulations, ${user}!`);
-    } else {
-      console.log(`Let's try again, ${user}!`);
-    }
+  if (playRound(scheme.roundsCount, scheme.getPuzzle)) {
+    console.log(`Congratulations, ${user}!`);
+  } else {
+    console.log(`Let's try again, ${user}!`);
   }
 };
 
-export default make;
+export default run;
