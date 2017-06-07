@@ -89,9 +89,8 @@ export const gameGcd = () => {
         return 1;
       } else if (b === 0) {
         return a;
-      } else {
-        return gcd(b, a % b);
       }
+      return gcd(b, a % b);
     };
 
     const puzzle = {
