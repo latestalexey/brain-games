@@ -19,3 +19,8 @@ $ brain-games
 # Start even game
 $ brain-even
 ```
+
+```
+# Start calc game
+$ brain-calc
+```
