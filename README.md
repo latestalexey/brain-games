@@ -24,3 +24,8 @@ $ brain-even
 # Start calc game
 $ brain-calc
 ```
+
+```
+# Start find gcd game
+$ brain-gcd
+```
