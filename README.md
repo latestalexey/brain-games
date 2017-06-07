@@ -14,3 +14,8 @@ $ npm install brain-games-ivan -g
 # Start brain game
 $ brain-games
 ```
+
+```
+# Start even game
+$ brain-even
+```
