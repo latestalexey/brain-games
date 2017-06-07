@@ -1,72 +1,37 @@
 import readlineSync from 'readline-sync';
 
-const showDescription = (description) => {
-  console.log('Welcome to the Brain Games!');
-  if (description) {
-    console.log(description);
-  }
-};
-
-const showSeparator = () => {
-  console.log('');
-};
-
-const requestName = () => readlineSync.question('May I have your name? ');
-
-const showGreeting = (name) => {
-  console.log(`Hello, ${name}!`);
-};
-
-const showQuestion = (description) => {
-  console.log(`Question: ${description}`);
-};
-
-const requesAnswer = () => readlineSync.question('Your answer: ');
-
-const showIsCorrect = () => {
-  console.log('Correct!');
-};
-
-const showSolution = (answer, correctAnswer) => {
-  console.log(`'${answer}' is wrong answer ;(. Correct answer was '${correctAnswer}'.`);
-};
-
-const showWin = (name) => {
-  console.log(`Congratulations, ${name}!`);
-};
-
-const showLoss = (name) => {
-  console.log(`Let's try again, ${name}!`);
-};
-
 const make = (scheme = {}) => {
-  showDescription(scheme.description);
-  showSeparator();
+  console.log('Welcome to the Brain Games!');
+  if (scheme.description) {
+    console.log(scheme.description);
+  }
 
-  const name = requestName();
-  showGreeting(name);
+  console.log('');
 
-  if (scheme.numQuestions) {
-    showSeparator();
+  const user = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${user}!`);
 
-    let numCorrectQuestions = 0;
-    for (let i = 0; i < scheme.numQuestions; i += 1) {
-      const question = scheme.makeQestion();
-      showQuestion(question.description);
-      const answer = requesAnswer();
-      if (answer === question.answer) {
-        showIsCorrect();
-        numCorrectQuestions += 1;
+  if (scheme.questionsCount) {
+    console.log('');
+
+    let correctQuestionsCount = 0;
+    for (let i = 0; i < scheme.questionsCount; i += 1) {
+      const puzzle = scheme.makePuzzle();
+      console.log(`Question: ${puzzle.question}`);
+      const answer = readlineSync.question('Your answer: ');
+      if (answer === puzzle.solution) {
+        console.log('Correct!');
+        correctQuestionsCount += 1;
       } else {
-        showSolution(answer, question.answer);
+        console.log(`'${answer}' is wrong answer ;(. Correct answer was '${puzzle.solution}'.`);
         break;
       }
     }
 
-    if (numCorrectQuestions === scheme.numQuestions) {
-      showWin(name);
+    if (correctQuestionsCount === scheme.questionsCount) {
+      console.log(`Congratulations, ${user}!`);
     } else {
-      showLoss(name);
+      console.log(`Let's try again, ${user}!`);
     }
   }
 };
