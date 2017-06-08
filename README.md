@@ -29,3 +29,8 @@ $ brain-calc
 # Start find gcd game
 $ brain-gcd
 ```
+
+```
+# Start balance game
+$ brain-balance
+```
