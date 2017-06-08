@@ -1,7 +1,9 @@
 import readlineSync from 'readline-sync';
 
-const playRound = (count, getPuzzle) => {
-  if (count === 0) {
+const roundsCount = 3;
+
+const playRound = (getPuzzle, count = 0) => {
+  if (count === roundsCount) {
     return true;
   }
 
@@ -15,12 +17,12 @@ const playRound = (count, getPuzzle) => {
     return false;
   }
 
-  return playRound(count - 1, getPuzzle);
+  return playRound(getPuzzle, count + 1);
 };
 
-const run = (description, getPuzzle, roundsCount = 3) => {
+const run = (scheme) => {
   console.log('Welcome to the Brain Games!');
-  console.log(description);
+  console.log(scheme.description);
 
   console.log('');
 
@@ -29,7 +31,7 @@ const run = (description, getPuzzle, roundsCount = 3) => {
 
   console.log('');
 
-  if (playRound(roundsCount, getPuzzle)) {
+  if (playRound(scheme.getPuzzle)) {
     console.log(`Congratulations, ${user}!`);
   } else {
     console.log(`Let's try again, ${user}!`);
