@@ -1,7 +1,7 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
-const puzzle = () => {
+const getPuzzle = () => {
   const min = 1;
   const max = 100;
   const num = getRandomNubmer(min, max);
@@ -12,13 +12,8 @@ const puzzle = () => {
 };
 
 const game = () => {
-  const scheme = {
-    description: 'Answer "yes" if number even otherwise answer "no"',
-    getPuzzle: puzzle,
-    roundsCount: 3,
-  };
-
-  run(scheme);
+  const description = 'Answer "yes" if number even otherwise answer "no"';
+  run(description, getPuzzle);
 };
 
 export default game;

@@ -1,7 +1,7 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
-const puzzle = () => {
+const getPuzzle = () => {
   const min = 1;
   const max = 100;
 
@@ -30,13 +30,8 @@ const puzzle = () => {
 };
 
 const game = () => {
-  const scheme = {
-    description: 'Find the greatest common divisor of given numbers.',
-    getPuzzle: puzzle,
-    roundsCount: 3,
-  };
-
-  run(scheme);
+  const description = 'Find the greatest common divisor of given numbers.';
+  run(description, getPuzzle);
 };
 
 export default game;

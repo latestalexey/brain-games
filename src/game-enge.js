@@ -18,9 +18,9 @@ const playRound = (count, getPuzzle) => {
   return playRound(count - 1, getPuzzle);
 };
 
-const run = (scheme) => {
+const run = (description, getPuzzle, roundsCount = 3) => {
   console.log('Welcome to the Brain Games!');
-  console.log(scheme.description);
+  console.log(description);
 
   console.log('');
 
@@ -29,7 +29,7 @@ const run = (scheme) => {
 
   console.log('');
 
-  if (playRound(scheme.roundsCount, scheme.getPuzzle)) {
+  if (playRound(roundsCount, getPuzzle)) {
     console.log(`Congratulations, ${user}!`);
   } else {
     console.log(`Let's try again, ${user}!`);
