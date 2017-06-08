@@ -6,8 +6,9 @@ const isEven = num => num % 2 === 0;
 const getPuzzle = () => {
   const min = 1;
   const max = 100;
-  const question = getRandomNubmer(min, max);
-  const solution = isEven(question) ? 'yes' : 'no';
+  const num = getRandomNubmer(min, max);
+  const question = `${num}`;
+  const solution = isEven(num) ? 'yes' : 'no';
   return { question, solution };
 };
 
