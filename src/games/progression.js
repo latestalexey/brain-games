@@ -23,9 +23,9 @@ const getProgression = () => {
 
 const pierceProgression = (progression) => {
   const piercedProgression = progression.slice();
-  piercedProgression.piercedIndex = getRandomNubmer(0, progression.length - 1);
-  piercedProgression.piercedValue = progression[progression.piercedIndex];
-  piercedProgression[progression.piercedIndex] = '..';
+  piercedProgression.piercedIndex = getRandomNubmer(0, piercedProgression.length - 1);
+  piercedProgression.piercedValue = progression[piercedProgression.piercedIndex];
+  piercedProgression[piercedProgression.piercedIndex] = '..';
   return piercedProgression;
 };
 
