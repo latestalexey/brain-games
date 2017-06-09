@@ -39,3 +39,8 @@ $ brain-balance
 # Start progression game
 $ brain-progression
 ```
+
+```
+# Start prime game
+$ brain-prime
+```
