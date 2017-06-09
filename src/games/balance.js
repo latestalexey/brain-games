@@ -1,6 +1,8 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const description = 'Balance the given number.';
+
 const minNum = 1;
 const maxNum = 10000;
 
@@ -26,9 +28,4 @@ const getPuzzle = () => {
   return { question, solution };
 };
 
-const game = () => {
-  const description = 'Balance the given number.';
-  run(description, getPuzzle);
-};
-
-export default game;
+export default () => run(description, getPuzzle);

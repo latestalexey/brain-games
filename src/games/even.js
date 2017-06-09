@@ -1,6 +1,8 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const description = 'Answer "yes" if number even otherwise answer "no"';
+
 const minNum = 1;
 const maxNum = 100;
 
@@ -13,9 +15,4 @@ const getPuzzle = () => {
   return { question, solution };
 };
 
-const game = () => {
-  const description = 'Answer "yes" if number even otherwise answer "no"';
-  run(description, getPuzzle);
-};
-
-export default game;
+export default () => run(description, getPuzzle);

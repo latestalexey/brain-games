@@ -1,6 +1,8 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const description = 'Find the greatest common divisor of given numbers.';
+
 const minNum = 1;
 const maxNum = 100;
 
@@ -28,9 +30,4 @@ const getPuzzle = () => {
   return { question, solution };
 };
 
-const game = () => {
-  const description = 'Find the greatest common divisor of given numbers.';
-  run(description, getPuzzle);
-};
-
-export default game;
+export default () => run(description, getPuzzle);

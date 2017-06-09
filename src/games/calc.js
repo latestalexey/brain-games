@@ -1,6 +1,8 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const description = 'What is the result of the expression?';
+
 const minNum = 1;
 const maxNum = 100;
 
@@ -30,9 +32,4 @@ const getPuzzle = () => {
   return { question, solution };
 };
 
-const game = () => {
-  const description = 'What is the result of the expression?';
-  run(description, getPuzzle);
-};
-
-export default game;
+export default () => run(description, getPuzzle);
