@@ -34,3 +34,8 @@ $ brain-gcd
 # Start balance game
 $ brain-balance
 ```
+
+```
+# Start progression game
+$ brain-progression
+```
