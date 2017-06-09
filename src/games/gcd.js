@@ -1,6 +1,9 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const minNum = 1;
+const maxNum = 100;
+
 const gcd = (a, b) => {
   if (a < 0) {
     return gcd(-a, b);
@@ -17,11 +20,8 @@ const gcd = (a, b) => {
 };
 
 const getPuzzle = () => {
-  const min = 1;
-  const max = 100;
-
-  const num1 = getRandomNubmer(min, max);
-  const num2 = getRandomNubmer(min, max);
+  const num1 = getRandomNubmer(minNum, maxNum);
+  const num2 = getRandomNubmer(minNum, maxNum);
 
   const question = `${num1} ${num2}`;
   const solution = String(gcd(num1, num2));
@@ -30,8 +30,7 @@ const getPuzzle = () => {
 
 const game = () => {
   const description = 'Find the greatest common divisor of given numbers.';
-  const scheme = { description, getPuzzle };
-  run(scheme);
+  run(description, getPuzzle);
 };
 
 export default game;

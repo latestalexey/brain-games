@@ -1,4 +1,11 @@
 #!/usr/bin/env node
-import game from '..';
+import readlineSync from 'readline-sync';
 
-game();
+export default () => {
+  console.log('Welcome to the Brain Games!');
+
+  console.log('');
+
+  const user = readlineSync.question('May I have your name? ');
+  console.log(`Hello, ${user}!`);
+};

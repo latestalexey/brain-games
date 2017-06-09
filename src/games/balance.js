@@ -1,6 +1,9 @@
 import run from '../game-enge';
 import getRandomNubmer from '../random';
 
+const minNum = 1;
+const maxNum = 10000;
+
 const balance = (num) => {
   const str = String(num);
   const sum = str.split('').reduce((acc, element) => acc + Number(element), 0);
@@ -17,9 +20,7 @@ const balance = (num) => {
 };
 
 const getPuzzle = () => {
-  const min = 1;
-  const max = 10000;
-  const num = getRandomNubmer(min, max);
+  const num = getRandomNubmer(minNum, maxNum);
   const question = `${num}`;
   const solution = String(balance(num));
   return { question, solution };
@@ -27,8 +28,7 @@ const getPuzzle = () => {
 
 const game = () => {
   const description = 'Balance the given number.';
-  const scheme = { description, getPuzzle };
-  run(scheme);
+  run(description, getPuzzle);
 };
 
 export default game;
