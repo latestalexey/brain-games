@@ -1,5 +1,5 @@
 import run from '../game-enge';
-import getRandomNubmer from '../random';
+import { getSimplePuzzle } from '../puzzle';
 
 const description = 'Answer "yes" if number even otherwise answer "no"';
 
@@ -8,11 +8,6 @@ const maxNum = 100;
 
 const isEven = num => num % 2 === 0;
 
-const getPuzzle = () => {
-  const num = getRandomNubmer(minNum, maxNum);
-  const question = `${num}`;
-  const solution = isEven(num) ? 'yes' : 'no';
-  return { question, solution };
-};
+const getPuzzle = () => getSimplePuzzle(minNum, maxNum, isEven);
 
 export default () => run(description, getPuzzle);

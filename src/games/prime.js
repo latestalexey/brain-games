@@ -1,5 +1,5 @@
 import run from '../game-enge';
-import getRandomNubmer from '../random';
+import { getSimplePuzzle } from '../puzzle';
 
 const description = 'Answer "yes" if number prime otherwise answer "no"';
 
@@ -18,11 +18,6 @@ const isPrime = (num) => {
   return true;
 };
 
-const getPuzzle = () => {
-  const num = getRandomNubmer(minNum, maxNum);
-  const question = `${num}`;
-  const solution = isPrime(num) ? 'yes' : 'no';
-  return { question, solution };
-};
+const getPuzzle = () => getSimplePuzzle(minNum, maxNum, isPrime);
 
 export default () => run(description, getPuzzle);
