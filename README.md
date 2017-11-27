@@ -10,36 +10,12 @@ $ npm install brain-games-ivan -g
 
 # Play
 ```
-# Start brain game
+# Start brain, even, calc, find gcd, balance, progression or prime game:
 $ brain-games
-```
-
-```
-# Start even game
 $ brain-even
-```
-
-```
-# Start calc game
 $ brain-calc
-```
-
-```
-# Start find gcd game
 $ brain-gcd
-```
-
-```
-# Start balance game
 $ brain-balance
-```
-
-```
-# Start progression game
 $ brain-progression
-```
-
-```
-# Start prime game
 $ brain-prime
 ```
