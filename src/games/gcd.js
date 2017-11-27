@@ -7,18 +7,18 @@ const minNum = 1;
 const maxNum = 100;
 
 const gcd = (a, b) => {
-  if (a < 0) {
-    return gcd(-a, b);
-  } else if (b < 0) {
-    return gcd(a, -b);
-  } else if (a < b) {
-    return gcd(b, a);
-  } else if (a === 0 && b === 0) {
+  const absA = Math.abs(a);
+  const absB = Math.abs(b);
+
+  const min = Math.min(absA, absB);
+  const max = Math.max(absA, absB);
+
+  if (max === 0) {
     return 1;
-  } else if (b === 0) {
-    return a;
+  } else if (min === 0) {
+    return max;
   }
-  return gcd(b, a % b);
+  return gcd(min, max % min);
 };
 
 const getPuzzle = () => {
