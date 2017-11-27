@@ -13,3 +13,6 @@ extends:
 
 rules:
   no-console: 0
+  import/extensions:
+    - off
+    - never

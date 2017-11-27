@@ -1,7 +1,6 @@
 # nodejs-package
-[![Code Climate](https://codeclimate.com/github/HardAndHeavy/project-lvl1-s101/badges/gpa.svg)](https://codeclimate.com/github/HardAndHeavy/project-lvl1-s101)
-[![Issue Count](https://codeclimate.com/github/HardAndHeavy/project-lvl1-s101/badges/issue_count.svg)](https://codeclimate.com/github/HardAndHeavy/project-lvl1-s101)
-[![Build Status](https://travis-ci.org/HardAndHeavy/project-lvl1-s101.svg?branch=master)](https://travis-ci.org/HardAndHeavy/project-lvl1-s101)
+[![Maintainability](https://api.codeclimate.com/v1/badges/8718df618f422f864e86/maintainability)](https://codeclimate.com/github/HardAndHeavy/brain-games/maintainability)
+[![Build Status](https://travis-ci.org/HardAndHeavy/rain-games.svg?branch=master)](https://travis-ci.org/HardAndHeavy/project-lvl1-s101)
 
 # Installation
 ```
