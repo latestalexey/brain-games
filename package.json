@@ -1,6 +1,6 @@
 {
   "name": "brain-games-ivan",
-  "version": "1.0.11",
+  "version": "1.0.12",
   "description": "Game for brain",
   "main": "dist/bin/brain-games.js",
   "scripts": {
@@ -18,6 +18,9 @@
     "brain-progression": "dist/bin/brain-progression.js",
     "brain-prime": "dist/bin/brain-prime.js"
   },
+  "files": [
+    "dist"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/HardAndHeavy/brain-games.git"
