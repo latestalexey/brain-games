@@ -1,6 +1,6 @@
 {
   "name": "brain-games-ivan",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "description": "Game for brain",
   "main": "dist/bin/brain-games.js",
   "scripts": {
