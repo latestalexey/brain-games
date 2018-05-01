@@ -1,5 +1,5 @@
+import { random } from 'lodash';
 import run from '../game-enge';
-import getRandomNubmer from '../random';
 
 const description = 'What number is missing in this progression?';
 
@@ -8,8 +8,8 @@ const maxNum = 100;
 const lengthProgression = 10;
 
 const getProgression = () => {
-  const startNum = getRandomNubmer(minNum, maxNum);
-  const step = getRandomNubmer(minNum, maxNum);
+  const startNum = random(minNum, maxNum);
+  const step = random(minNum, maxNum);
 
   const iter = (num, progression) => {
     if (progression.length === lengthProgression) {
@@ -21,21 +21,21 @@ const getProgression = () => {
   return iter(startNum, []);
 };
 
-const pierceProgression = (progression) => {
-  const piercedProgression = progression.slice();
-  piercedProgression.piercedIndex = getRandomNubmer(0, piercedProgression.length - 1);
-  piercedProgression.piercedValue = progression[piercedProgression.piercedIndex];
-  piercedProgression[piercedProgression.piercedIndex] = '..';
-  return piercedProgression;
+const pierceProgression = (prog) => {
+  const piercedProg = prog.slice();
+  piercedProg.piercedIndex = random(0, piercedProg.length - 1);
+  piercedProg.piercedValue = prog[piercedProg.piercedIndex];
+  piercedProg[piercedProg.piercedIndex] = '..';
+  return piercedProg;
 };
 
 const progressionToString = progression => progression.join(' ');
 
 const getPuzzle = () => {
-  const piercedProgression = pierceProgression(getProgression());
+  const progression = pierceProgression(getProgression());
 
-  const question = progressionToString(piercedProgression);
-  const solution = String(piercedProgression.piercedValue);
+  const question = progressionToString(progression);
+  const solution = String(progression.piercedValue);
   return { question, solution };
 };
 

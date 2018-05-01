@@ -1,5 +1,5 @@
+import { random } from 'lodash';
 import run from '../game-enge';
-import getRandomNubmer from '../random';
 
 const description = 'Find the greatest common divisor of given numbers.';
 
@@ -22,8 +22,8 @@ const gcd = (a, b) => {
 };
 
 const getPuzzle = () => {
-  const num1 = getRandomNubmer(minNum, maxNum);
-  const num2 = getRandomNubmer(minNum, maxNum);
+  const num1 = random(minNum, maxNum);
+  const num2 = random(minNum, maxNum);
 
   const question = `${num1} ${num2}`;
   const solution = String(gcd(num1, num2));

@@ -1,13 +1,13 @@
 {
   "name": "brain-games-ivan",
-  "version": "1.0.12",
+  "version": "1.1.0",
   "description": "Game for brain",
   "main": "dist/bin/brain-games.js",
   "scripts": {
     "babel-node": "babel-node",
+    "eslint": "eslint",
     "build": "NODE_ENV=production babel src --out-dir dist --source-maps inline",
-    "prepublishOnly": "npm run build",
-    "eslint": "eslint"
+    "prepublishOnly": "rm -rf dist && npm run build"
   },
   "bin": {
     "brain-games": "dist/bin/brain-games.js",
@@ -36,16 +36,18 @@
   },
   "homepage": "https://github.com/HardAndHeavy/brain-games#readme",
   "dependencies": {
-    "readline-sync": "^1.4.7"
+    "readline-sync": "*",
+    "lodash": "*"
   },
   "devDependencies": {
-    "babel-cli": "",
-    "babel-core": "",
-    "babel-preset-env": "",
-    "babel-preset-stage-0": "",
-    "babel-eslint": "",
-    "eslint": "",
-    "eslint-config-airbnb-base": "",
-    "eslint-plugin-import": ""
+    "babel-cli": "*",
+    "babel-core": "*",
+    "babel-preset-env": "*",
+    "babel-preset-stage-0": "*",
+    "babel-eslint": "*",
+    "eslint": "*",
+    "eslint-plugin-babel": "*",
+    "eslint-config-airbnb-base": "*",
+    "eslint-plugin-import": "*"
   }
 }

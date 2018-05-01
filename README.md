@@ -5,12 +5,12 @@
 # Installation
 ```
 # Get the latest release of brain-games
-$ npm install brain-games-ivan -g 
+$ npm i brain-games-ivan -g 
 ```
 
 # Play
 ```
-# Start game:
+# Run game:
 $ brain-games
 $ brain-even
 $ brain-calc
@@ -18,4 +18,9 @@ $ brain-gcd
 $ brain-balance
 $ brain-progression
 $ brain-prime
+```
+
+# Run test
+```
+make test
 ```

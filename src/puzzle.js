@@ -1,7 +1,7 @@
-import getRandomNubmer from './random';
+import { random } from 'lodash';
 
 export const getSimplePuzzle = (minNum, maxNum, solve) => {
-  const num = getRandomNubmer(minNum, maxNum);
+  const num = random(minNum, maxNum);
   const question = `${num}`;
   const solution = solve(num) ? 'yes' : 'no';
   return { question, solution };

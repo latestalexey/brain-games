@@ -1,5 +1,5 @@
+import { repeat, random } from 'lodash';
 import run from '../game-enge';
-import getRandomNubmer from '../random';
 
 const description = 'Balance the given number.';
 
@@ -8,21 +8,21 @@ const maxNum = 10000;
 
 const balance = (num) => {
   const str = String(num);
+  const { length } = str;
   const sum = str.split('').reduce((acc, element) => acc + Number(element), 0);
-  const firstNum = Math.floor(sum / str.length);
-  const firstNumCount = str.length - (sum % str.length);
-  let balanceStr = '';
-  for (let i = 0; i < firstNumCount; i += 1) {
-    balanceStr += String(firstNum);
-  }
-  for (let i = firstNumCount; i < str.length; i += 1) {
-    balanceStr += String(firstNum + 1);
-  }
-  return Number(balanceStr);
+
+  const firstNum = Math.floor(sum / length);
+  const firstLength = length - (sum % length);
+  const secondNum = firstNum + 1;
+  const secondLength = length - firstLength;
+
+  const firstStr = repeat(String(firstNum), firstLength);
+  const secondStr = repeat(String(secondNum), secondLength);
+  return Number(`${firstStr}${secondStr}`);
 };
 
 const getPuzzle = () => {
-  const num = getRandomNubmer(minNum, maxNum);
+  const num = random(minNum, maxNum);
   const question = `${num}`;
   const solution = String(balance(num));
   return { question, solution };
